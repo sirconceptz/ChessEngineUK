@@ -8,8 +8,8 @@ import com.example.chessengineuk.interfaces.SingleGame
  */
 
 class Game() : SingleGame {
+    private val board = Board()
     var players: Array<Player> = emptyArray()
-    val board = Board()
     var currentTurn: Player? = null
     var status: GameStatus = GameStatus.NEW
     var movesPlayed: MutableList<Move> = mutableListOf()
@@ -69,6 +69,10 @@ class Game() : SingleGame {
         return true
     }
 
+    override fun getMoveList(): List<Move> {
+        TODO("Not yet implemented")
+    }
+
     override fun getGameStatus() : GameStatus {
         return status
     }
@@ -79,5 +83,21 @@ class Game() : SingleGame {
             return true
         }
         return false
+    }
+
+    override fun getGamePlayers(): Array<Player> {
+        TODO("Not yet implemented")
+    }
+
+    override fun getBoard(): Board {
+        return board
+    }
+
+    override fun winPlayer(player: Player) {
+        TODO("Not yet implemented")
+    }
+
+    override fun resignPlayer(player: Player) {
+        TODO("Not yet implemented")
     }
 }
